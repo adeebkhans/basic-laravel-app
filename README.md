@@ -16,7 +16,7 @@ Clear instructions to set up and run this Laravel task-manager project locally.
 1. Clone the repo and enter the project directory:
 
 ```bash
-git clone <repo-url> task-manager
+git clone https://github.com/adeebkhans/basic-laravel-app task-manager
 cd task-manager
 ```
 
@@ -37,7 +37,7 @@ php artisan key:generate
 
 4. Configure your database in `.env` (DB_CONNECTION, DB_DATABASE, DB_USERNAME, DB_PASSWORD).
 
-5. Run migrations (and seeders if any):
+5. Run migrations:
 
 ```bash
 php artisan migrate
@@ -60,19 +60,12 @@ Start the local development server:
 
 ```bash
 php artisan serve --host=127.0.0.1 --port=8000
+or just 
+php artisan serve 
 ```
 
 Open http://127.0.0.1:8000 in your browser. The application redirects `/` to `/tasks`.
 
-## Tests
-
-Run the test suite with:
-
-```bash
-php artisan test
-# or
-./vendor/bin/phpunit
-```
 
 ## Useful Commands
 
@@ -81,12 +74,6 @@ php artisan test
 ```bash
 php artisan config:clear
 php artisan config:cache
-```
-
-- Run database seeder (if present):
-
-```bash
-php artisan db:seed
 ```
 
 ## Troubleshooting
