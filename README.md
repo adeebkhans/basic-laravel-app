@@ -1,5 +1,101 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
+# Task Manager (Laravel)
+
+Clear instructions to set up and run this Laravel task-manager project locally.
+
+## Requirements
+
+- PHP 8.1+ (or the version required by composer.json)
+- Composer
+- Node.js & npm
+- A database (MySQL, MariaDB, SQLite, etc.)
+
+## Setup
+
+1. Clone the repo and enter the project directory:
+
+```bash
+git clone <repo-url> task-manager
+cd task-manager
+```
+
+2. Install PHP dependencies:
+
+```bash
+composer install
+```
+
+3. Copy the environment file and generate an app key:
+
+```bash
+copy .env.example .env    # Windows
+# or
+cp .env.example .env     # macOS / Linux
+php artisan key:generate
+```
+
+4. Configure your database in `.env` (DB_CONNECTION, DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+
+5. Run migrations (and seeders if any):
+
+```bash
+php artisan migrate
+```
+
+## Frontend
+
+Install JS dependencies and build assets:
+
+```bash
+npm install
+npm run dev    # development
+# or
+npm run build  # production build
+```
+
+## Run the application
+
+Start the local development server:
+
+```bash
+php artisan serve --host=127.0.0.1 --port=8000
+```
+
+Open http://127.0.0.1:8000 in your browser. The application redirects `/` to `/tasks`.
+
+## Tests
+
+Run the test suite with:
+
+```bash
+php artisan test
+# or
+./vendor/bin/phpunit
+```
+
+## Useful Commands
+
+- Clear and cache config:
+
+```bash
+php artisan config:clear
+php artisan config:cache
+```
+
+- Run database seeder (if present):
+
+```bash
+php artisan db:seed
+```
+
+## Troubleshooting
+
+- 404 on `/` or `/tasks`: ensure migrations have run and routes are registered (see `routes/web.php`).
+- If `php artisan serve` fails on Windows, try running from PowerShell with administrator privileges or use a specific host/port as shown above.
+
+If you need the README expanded (examples, env vars, or Docker config), tell me what you'd like added.
+
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
